@@ -1,4 +1,6 @@
-
+/* 
+ * 目标：了解解决运行时实例对象销毁时堆空间内存泄漏的办法 -- 析构函数
+ */
 #include <iostream>
 #include <string.h>
 #include <unistd.h>

@@ -1,4 +1,6 @@
-
+/*
+* 目标：运行时 new 出的内存空间没有被销毁，导致内存泄漏。
+*/
 #include <iostream>
 #include <string.h>
 #include <unistd.h>

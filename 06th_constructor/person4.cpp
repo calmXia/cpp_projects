@@ -16,6 +16,7 @@ public:
 	Person(char *name) 
 	{
 		cout <<"Pserson(char *)"<<endl;
+		//在构造函数使用 new 实例化对象，申请了堆空间，但是没有手动释放，有什么问题呢？（见person5.cpp）
 		this->name = new char[strlen(name) + 1];
 		strcpy(this->name, name);
 	}
@@ -57,7 +58,7 @@ public:
 int main(int argc, char **argv)
 {
 	Person per("zhangsan", 16);
-	Person per2;   /* �����޲ι��캯�� */
+	Person per2;   /* µ÷ÓÃÎÞ²Î¹¹Ôìº¯Êý */
 	Person per3(); /* int fun(); */
 
 	Person *per4 = new Person;

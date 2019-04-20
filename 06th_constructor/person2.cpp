@@ -16,7 +16,7 @@ public:
 		cout <<"Pserson(char *)"<<endl;
 		this->name = name;
 	}
-	//work 设置默认值，避免调用时未传参导致乱码（野值）情况
+	//work 设置默认值，避免实例化对象调用时未传参导致乱码（野值）的情况
 	Person(char *name, int age, char *work = "none") 
 	{
 		cout <<"Pserson(char*, int)"<<endl;

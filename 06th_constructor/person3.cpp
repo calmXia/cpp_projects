@@ -50,9 +50,10 @@ public:
 int main(int argc, char **argv)
 {
 	Person per("zhangsan", 16);
-	Person per2;   /* �����޲ι��캯�� */
+	Person per2;   /* µ÷ÓÃÎÞ²Î¹¹Ôìº¯Êý */
 	Person per3(); /* int fun(); */
 
+	// per4 与 per5 完全等价，都是调用无参构造函数.
 	Person *per4 = new Person;
 	Person *per5 = new Person();
 
@@ -65,6 +66,7 @@ int main(int argc, char **argv)
 	per7->printInfo();
 	per8->printInfo();
 
+	// 实例化对象在程序运行退出结束时会被自动销毁；但是往往在大型程序中程序一直在运行，为了避免多余的内存消耗，需要手动销毁，方法如下：
 	delete per4;
 	delete per5;
 	delete []per6;

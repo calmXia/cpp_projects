@@ -16,7 +16,7 @@ public:
 		cout <<"Pserson(char *)"<<endl;
 		this->name = name;
 	}
-
+	//work 设置默认值，避免调用时未传参导致乱码（野值）情况
 	Person(char *name, int age, char *work = "none") 
 	{
 		cout <<"Pserson(char*, int)"<<endl;
@@ -49,9 +49,9 @@ public:
 
 int main(int argc, char **argv)
 {
-	Person per("zhangsan", 16);
-	Person per2;   /* �����޲ι��캯�� */
-	Person per3(); /* int fun(); */
+	Person per("zhangsan", 16); /* 调用相应的有参构造函数*/
+	Person per2;   /* 调用无参构造函数来实例化对象 */
+	Person per3(); /* 这是函数声明（形如 int fun();），并不会调用无参构造函数.  */
 
 	per.printInfo();
 	return 0;

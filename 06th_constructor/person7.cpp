@@ -36,7 +36,7 @@ public:
 		this->work = new char[strlen(work) + 1];
 		strcpy(this->work, work);
 	}
-
+	//析构函数不能重载，没有参数，一个类只能有一个析构函数。如果没定义，编译器会自动生成一个。
 	~Person()
 	{
 		cout << "~Person()"<<endl;
@@ -73,10 +73,17 @@ public:
 
 void test_fun()
 {
+	//首先要明确一点，系统只会自动释放栈内空间，而堆内空间需要用户自己维护。
+	//C++中，除了new来的空间存放在堆内，其他均存放在栈中
+	
+	//1.常规调用构造函数生成的实例化对象存储在栈空间，局部方法调用结束返回之前的瞬间有系统自动调用析构函数销毁对象
 	Person per("zhangsan", 16);
 
+	//2.局部方法中使用 new 实例化的对象存储在堆空间，只能手动通过 delete 销毁，
+	//否则在方法退出后且主程序然在运行时( main 还在)依然存在，导致内存泄漏。
+	//最终只能在主程序退出时由系统销毁，且此时并不会调用析构函数。
 	Person *per7 = new Person("lisi", 18, "student");
-	//delete per7;
+	delete per7;
 
 }
 

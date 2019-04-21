@@ -1,4 +1,7 @@
-
+/*
+* 目标：堆空间，栈空间；
+	析构函数，delete 的区别
+*/
 #include <iostream>
 #include <string.h>
 #include <unistd.h>
